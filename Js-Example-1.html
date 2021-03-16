@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="tr-TR">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Content-Language" content="tr">
+<meta charset="utf-8">
+<title> Js-Example-1 </title>
+
+
+</head>
+
+<body>
+	<form id="form" action="/" method="GET">
+        <div>
+            <label for="isim">isim</label>
+            <input id="isim" name="isim" type="text" required>
+        </div>
+        <div>
+            <label for="soyad">soyad</label>
+            <input id="soyad" name="soyad" type="text" required>
+        </div>
+        <div>
+            <label for="tarih">doğum yılınız</label>
+            <input id="tarih" name="tarih" type="int" required>
+        </div>
+        <div>
+            <label for="cinsiyet">cinsiyet</label>
+            <input id="cinsiyet" name="cinsiyet" type="text" required>
+        </div>
+    </form>
+    <button onclick="tıkla()">kaydet</button>
+    <div>
+        <p id="yazı" type="text">
+            
+        </p>
+    </div>
+    <div>
+        <p id="yazı1" type="text">
+            
+        </p>
+    </div>
+    <div>
+        <p id="yazı2" type="text">
+            
+        </p>
+    </div>
+    <script>
+        function tıkla(){
+            var paragraf=document.getElementById("yazı")
+            var paragraf1=document.getElementById("yazı1")
+            var paragraf2=document.getElementById("yazı2")
+            var isim =document.getElementById("isim");
+            var soyad =document.getElementById("soyad");
+            var tarih =document.getElementById("tarih");
+            var cinsiyet =document.getElementById("cinsiyet");
+            var isim1 = isim.value.replace(isim.value[0],isim.value[0].toUpperCase());
+            var soyad1 = soyad.value.replace(soyad.value[0],soyad.value[0].toUpperCase());
+            var cinsiyet1 = cinsiyet.value.replace(cinsiyet.value[0],cinsiyet.value[0].toUpperCase());
+            var yas=2021-tarih.value
+            if((isim.value=="")||(soyad.value=="")||(tarih.value=="")||(cinsiyet.value=="")){
+                alert("tüm formu doldurun.");
+            }else{
+                paragraf.innerHTML="Merhaba " +isim1+ " "+soyad1;
+                paragraf1.innerHTML=" Yaş: "+ yas;
+                paragraf2.innerHTML=" Cinsiyet: " +cinsiyet1;
+            }
+            
+        }
+    </script>
+</body>
+</html>
